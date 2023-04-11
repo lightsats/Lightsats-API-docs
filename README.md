@@ -1,5 +1,7 @@
 API documentation for Lightsats powered by Slate
 
+View at https://lightsats.github.io/Lightsats-API-docs
+
 Run with:
 
 `docker run --rm --name slate -p 4567:4567 -v $(pwd)/source:/srv/slate/source slatedocs/slate serve`
