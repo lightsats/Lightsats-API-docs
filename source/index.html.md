@@ -301,8 +301,8 @@ Parameters marked * are required.
 
 Parameter | Example  | Description
 --------- | ----------- | -----------
-amount* | 21 | The value of the tip in sats (not including fees)
-quantity* | 1 | The amount of tips to create. A group will be created if the quantity is greater than 1.
+amount* | 21 | The amount of sats being tipped (not including fees)
+quantity* | 1 | The quantity of tips to create. A group will be created if the quantity is greater than 1.
 expiry* | "2023-04-21T08:28:48.518Z" | After this date your tip can no longer be claimed or withdrawn, and the funds will be returned to you
 currency | "USD" | The fiat currency your tippee uses
 onboardingFlow | "DEFAULT" | "DEFAULT", "SKIP", or "LIGHTNING". Skip instantly shows LNURLw code. Lightning guides user to get a wallet and then login with lnurl-auth
@@ -500,7 +500,3 @@ This endpoint deletes a specific tip group and all its tips.
 Parameter | Description
 --------- | -----------
 ID | The ID of the tip group to delete
-
-# Tippee Tips
-
-Coming soon.
