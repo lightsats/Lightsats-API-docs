@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta
             name="description"
-            content="Documentation for the Kittn API"
+            content="Documentation for the Lightsats API"
         >
-    <title>API Reference</title>
+    <title>Lightsats API Reference</title>
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -295,7 +295,7 @@
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -303,12 +303,9 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+      <img src="images/logo-1abd4752.svg" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -322,159 +319,161 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#tipper-tips" class="toc-h1 toc-link" data-title="Tipper Tips">Tipper Tips</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#get-all-tips" class="toc-h2 toc-link" data-title="Get all Tips">Get all Tips</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#get-a-single-tip" class="toc-h2 toc-link" data-title="Get a single Tip">Get a single Tip</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#create-a-tip-tip-group" class="toc-h2 toc-link" data-title="Create a Tip / Tip Group">Create a Tip / Tip Group</a>
+                  </li>
+                  <li>
+                    <a href="#funding-tips" class="toc-h2 toc-link" data-title="Funding Tips">Funding Tips</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-tip" class="toc-h2 toc-link" data-title="Delete a Tip">Delete a Tip</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-single-tip" class="toc-h2 toc-link" data-title="Update a single Tip">Update a single Tip</a>
                   </li>
               </ul>
+          </li>
+          <li>
+            <a href="#tip-groups" class="toc-h1 toc-link" data-title="Tip Groups">Tip Groups</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-a-tip-group" class="toc-h2 toc-link" data-title="Get a Tip Group">Get a Tip Group</a>
+                  </li>
+                  <li>
+                    <a href="#update-all-tips-in-a-tip-group" class="toc-h2 toc-link" data-title="Update all Tips in a Tip group">Update all Tips in a Tip group</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-tip-group" class="toc-h2 toc-link" data-title="Delete a Tip Group">Delete a Tip Group</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#tippee-tips" class="toc-h1 toc-link" data-title="Tippee Tips">Tippee Tips</a>
           </li>
           <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://lightsats.com' target="_blank">Create A Lightsats account</a></li>
+            <li><a href='https://github.com/lightsats/lightsats/issues' target="_blank">Report an issue</a></li>
+            <li><a href='https://github.com/slatedocs/slate' target="_blank">Documentation Powered by Slate</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>Welcome to the Lightsats API! You can use our API to access Lightsats API endpoints to automate the management of Lightsats tips.</p>
 <h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>Lightsats uses API keys to allow access to the API. You can register a new Lightsats API key in you <a href="http://lightsats.com/profile">Lightsats Profile</a>.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>Lightsats expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
+<p><code>Authorization: Bearer your_lightsats_api_token</code></p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>your_lightsats_api_token</code> with your personal API key.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
+<h1 id='tipper-tips'>Tipper Tips</h1>
+<p>Endpoints for managing tips you have created as a tipper.</p>
+<h2 id='get-all-tips'>Get all Tips</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://lightsats.com/api/tipper/tips"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer your_lightsats_api_token"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clfw7rh1p000slo8n4j0kyrik"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tipperId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cla56o9pr0000lo0jb71mkc3p"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tippeeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"claauuz5z0001lo4rcr0t9j0s"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tippeeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bob"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tippeeLocale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"th"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lnbc...."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"invoiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f8ea6b72d7b...."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"preparationInvoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lnbc110...."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"preparationInvoiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1fd492..."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLAIMED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-31T07:18:57.803Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-31T07:19:52.046Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"claimed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-21T05:25:37.261Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-21T07:18:57.784Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"copiedClaimUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-13T08:08:43.998Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thank you for the amazing meal"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"withdrawalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clcvpy3h20..."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"numSmsTokens"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"onboardingFlow"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEFAULT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lastWithdrawal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-31T07:19:13.109Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"groupId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clfw7rh1o000olo8n5qrqjc6e"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"groupTipIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"claimedFromPrintedCard"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"recommendedWalletId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wos"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"anonymousTipper"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"passphrase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"execute aerobic clock"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"claimWebhookUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://discord.com/api/webhooks/..."</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="err">more</span><span class="w"> </span><span class="err">tips</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
+<p>This endpoint gets created tips.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<p><code>GET https://lightsats.com/api/tipper/tips</code></p>
+<h2 id='get-a-single-tip'>Get a single Tip</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://lightsats.com/api/tipper/tips/clfw7rh1p000slo8n4j0kyrik"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer your_lightsats_api_token"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clfw7rh1p000slo8n4j0kyrik"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tipperId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cla56o9pr0000lo0jb71mkc3p"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tippeeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"claauuz5z0001lo4rcr0t9j0s"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tippeeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bob"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tippeeLocale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"th"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lnbc...."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"invoiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f8ea6b72d7b...."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"preparationInvoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lnbc110...."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"preparationInvoiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1fd492..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLAIMED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-31T07:18:57.803Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-31T07:19:52.046Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"claimed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-21T05:25:37.261Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-21T07:18:57.784Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"copiedClaimUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-01-13T08:08:43.998Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thank you for the amazing meal"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"withdrawalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clcvpy3h20..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"numSmsTokens"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"onboardingFlow"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEFAULT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastWithdrawal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-03-31T07:19:13.109Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"groupId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clfw7rh1o000olo8n5qrqjc6e"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"groupTipIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"claimedFromPrintedCard"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"recommendedWalletId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wos"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"anonymousTipper"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"passphrase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"execute aerobic clock"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"claimWebhookUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://discord.com/api/webhooks/..."</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<p>This endpoint retrieves a specific tip.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<p><code>GET https://lightsats.com/api/tipper/tips/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -484,24 +483,228 @@ Remember — a happy kitten is an authenticated kitten!
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>The ID of the tip to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='create-a-tip-tip-group'>Create a Tip / Tip Group</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://lightsats.com/api/tipper/tips'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Bearer your_lightsats_api_token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+  "expiry": "2024-01-21T08:28:48.518Z",
+  "amount": 21,
+  "quantity": 1
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>When providing a quantity of 1, the above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clgccm1nz000nlo8l3atu5599"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tipperId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cla56o9pr0000lo0jb71mkc3p"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tippeeId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tippeeName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tippeeLocale"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lnbc310n1pjr2mrkpp5ghppr0aul08kxrn9x6e5cq7sa9yrp2z6x8vtr6j83yklec0jntkqdq4f35kw6r5wdshgueqw35hqcqzpgxqyz5vqsp585s7qv2x3a87u06eaf9v3gkchpgtueherw4qfuj3c32nh2d9l8yq9qyyssq5vpt4psr2msfqm2j2gszn4r7wf578glnexne5gyleqp3jemnmvy3kkd50p28sl29p6rc0slhe2a73m83y0eqq82zts3qgsng6jt87kqpl0qnnq"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"invoiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45c211bfbcfbcf630e6536b34c03d0e94830a85a31d8b1ea47892dfce1f29aec"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"preparationInvoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"preparationInvoiceId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNFUNDED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-11T14:19:01.487Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-11T14:19:06.279Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"claimed"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-21T08:28:48.518Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"copiedClaimUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"withdrawalId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"numSmsTokens"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"onboardingFlow"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEFAULT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastWithdrawal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"groupId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"groupTipIndex"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"claimedFromPrintedCard"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"recommendedWalletId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"anonymousTipper"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"passphrase"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"claimWebhookUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>When providing a quantity greater than 1, the above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clgcda8fu000qlo8llc1v36mp"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-11T14:37:50.010Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-11T14:37:53.190Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNFUNDED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tipperId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cla56o9pr0000lo0jb71mkc3p"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lnbc620n1pjr2uxapp5ulw7z2pmflxa2uncr5aqps6e4w7yvvpl3kg6zgmetzl2h0q3acrqdq4f35kw6r5wdshgueqw35hqcqzpgxqyz5vqsp5wccm3fw73hhes83p0d8wfgc5whywk6spgt9ecxevnlqrx25r0wcq9qyyssqmgkeyl94gxs8r4y54hxg7227jpa9qtgj9qczyg9s8feasw66vp8rzhl7xmy5jvhqpd9r24z7zffxnlmq29mgrwgk5rn0zwx9erf4keqp2sqqhh"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"invoiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e7dde1283b4fcdd572781d3a00c359abbc46303f8d91a1237958beabbc11ee06"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tips"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clgcda8fu000rlo8llou18pbg"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tipperId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cla56o9pr0000lo0jb71mkc3p"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tippeeId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tippeeName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tippeeLocale"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"invoiceId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"preparationInvoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"preparationInvoiceId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNFUNDED"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-11T14:37:50.010Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-11T14:37:50.010Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"claimed"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-21T08:28:48.518Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"copiedClaimUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"withdrawalId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"numSmsTokens"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"onboardingFlow"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEFAULT"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastWithdrawal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"groupId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clgcda8fu000qlo8llc1v36mp"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"groupTipIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"claimedFromPrintedCard"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"recommendedWalletId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"anonymousTipper"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"passphrase"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"claimWebhookUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clgcda8fu000slo8limy2cqyb"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tipperId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cla56o9pr0000lo0jb71mkc3p"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tippeeId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tippeeName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tippeeLocale"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"invoiceId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"preparationInvoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"preparationInvoiceId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNFUNDED"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-11T14:37:50.010Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-11T14:37:50.010Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"claimed"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-21T08:28:48.518Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"copiedClaimUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"withdrawalId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"numSmsTokens"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"onboardingFlow"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEFAULT"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastWithdrawal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"groupId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clgcda8fu000qlo8llc1v36mp"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"groupTipIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"claimedFromPrintedCard"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"recommendedWalletId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"anonymousTipper"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"passphrase"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"claimWebhookUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint creates a tip or tip group.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://lightsats.com/api/tipper/tips</code></p>
+<h3 id='parameters'>Parameters</h3>
+<p>Parameters marked * are required.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>amount*</td>
+<td>21</td>
+<td>The value of the tip in sats (not including fees)</td>
+</tr>
+<tr>
+<td>quantity*</td>
+<td>1</td>
+<td>The amount of tips to create. A group will be created if the quantity is greater than 1.</td>
+</tr>
+<tr>
+<td>expiry*</td>
+<td>&quot;2023-04-21T08:28:48.518Z&quot;</td>
+<td>After this date your tip can no longer be claimed or withdrawn, and the funds will be returned to you</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>&quot;USD&quot;</td>
+<td>The fiat currency your tippee uses</td>
+</tr>
+<tr>
+<td>onboardingFlow</td>
+<td>&quot;DEFAULT&quot;</td>
+<td>&quot;DEFAULT&quot;, &quot;SKIP&quot;, or &quot;LIGHTNING&quot;. Skip instantly shows LNURLw code. Lightning guides user to get a wallet and then login with lnurl-auth</td>
+</tr>
+<tr>
+<td>tippeeName</td>
+<td>&quot;Bob&quot;</td>
+<td>The name of the recipient</td>
+</tr>
+<tr>
+<td>tippeeLocale</td>
+<td>&quot;th&quot;</td>
+<td>Locale code for translations shown to the tippee. If not provided, the language will be guessed from the user&#39;s browser settings</td>
+</tr>
+<tr>
+<td>note</td>
+<td>&quot;Thanks for the great pizza!&quot;</td>
+<td>A note to the tippee, shown when they claim the tip</td>
+</tr>
+<tr>
+<td>tippeeNames</td>
+<td>[&quot;Name 1&quot;, &quot;Name 2&quot;]</td>
+<td>Specify names of each tippee, if creating a tip group</td>
+</tr>
+<tr>
+<td>recommendedWalletId</td>
+<td>&quot;alby&quot;</td>
+<td>Always show a specific wallet at the top of the list. See app/lib/items/wallets.ts</td>
+</tr>
+<tr>
+<td>anonymousTipper</td>
+<td>false</td>
+<td>If true, do not reveal your profile to the recipient.</td>
+</tr>
+<tr>
+<td>generatePassphrase</td>
+<td>false</td>
+<td>If true, generate a 3-word magic passphrase a user can use to redeem at https://lightsats.com/tip</td>
+</tr>
+<tr>
+<td>claimWebhookUrl</td>
+<td>&quot;https://discord.com/api/webhooks/...&quot;</td>
+<td>Fire a webhook when the tip gets claimed. Only works for onboardingFlow of &quot;DEFAULT&quot; and &quot;LIGHTNING&quot;</td>
+</tr>
+</tbody></table>
+<h2 id='funding-tips'>Funding Tips</h2>
+<p>Each created tip or tip group has an &quot;invoice&quot; field containing the funding invoice. This must be paid with a lightning wallet. You can do this programmatically using any wallet API such as <a href="https://legend.lnbits.com/docs#/default/api_payments_create_api_v1_payments_post">lnbits</a> or the <a href="https://guides.getalby.com/lndhub-api/introduction/what-is-lndhub">Alby LndHub API</a>.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
+<p>Once the tip invoice has been paid, the tip must be polled (using a GET request) for its status to be updated from &quot;UNFUNDED&quot; to &quot;UNSEEN&quot;.</p>
+
+<p>Only tips that then get viewed (status updated to &quot;SEEN&quot;) can be claimed.</p>
+
+<aside class="warning">Tip groups must be polled (using a GET request) until each tip within the tip group has been updated to "UNSEEN". </aside>
+<h2 id='delete-a-tip'>Delete a Tip</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://lightsats.com/api/tipper/tips/clfw7rh1p000slo8n4j0kyrik"</span> <span class="se">\</span>
   <span class="nt">-X</span> DELETE <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer your_lightsats_api_token"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -511,9 +714,11 @@ Remember — a happy kitten is an authenticated kitten!
   </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
+<p>This endpoint deletes a specific tip.</p>
+
+<aside class="warning">Only unfunded tips can be deleted.</aside>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>DELETE https://lightsats.com/api/tipper/tips/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -523,15 +728,147 @@ Remember — a happy kitten is an authenticated kitten!
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>The ID of the tip to delete</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
+<h2 id='update-a-single-tip'>Update a single Tip</h2>
+<p>Coming soon</p>
+<h1 id='tip-groups'>Tip Groups</h1><h2 id='get-a-tip-group'>Get a Tip Group</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://lightsats.com/api/tipGroups/clfw7rh1o000olo8n5qrqjc6e"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer your_lightsats_api_token"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clgcda8fu000qlo8llc1v36mp"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-11T14:37:50.010Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-11T14:37:53.190Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNFUNDED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tipperId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cla56o9pr0000lo0jb71mkc3p"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lnbc620n1pjr2uxapp5ulw7z2pmflxa2uncr5aqps6e4w7yvvpl3kg6zgmetzl2h0q3acrqdq4f35kw6r5wdshgueqw35hqcqzpgxqyz5vqsp5wccm3fw73hhes83p0d8wfgc5whywk6spgt9ecxevnlqrx25r0wcq9qyyssqmgkeyl94gxs8r4y54hxg7227jpa9qtgj9qczyg9s8feasw66vp8rzhl7xmy5jvhqpd9r24z7zffxnlmq29mgrwgk5rn0zwx9erf4keqp2sqqhh"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"invoiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e7dde1283b4fcdd572781d3a00c359abbc46303f8d91a1237958beabbc11ee06"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tips"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clgcda8fu000rlo8llou18pbg"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tipperId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cla56o9pr0000lo0jb71mkc3p"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tippeeId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tippeeName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tippeeLocale"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"invoiceId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"preparationInvoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"preparationInvoiceId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNFUNDED"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-11T14:37:50.010Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-11T14:37:50.010Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"claimed"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-21T08:28:48.518Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"copiedClaimUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"withdrawalId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"numSmsTokens"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"onboardingFlow"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEFAULT"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastWithdrawal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"groupId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clgcda8fu000qlo8llc1v36mp"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"groupTipIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"claimedFromPrintedCard"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"recommendedWalletId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"anonymousTipper"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"passphrase"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"claimWebhookUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clgcda8fu000slo8limy2cqyb"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tipperId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cla56o9pr0000lo0jb71mkc3p"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tippeeId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tippeeName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tippeeLocale"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"invoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"invoiceId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"preparationInvoice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"preparationInvoiceId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNFUNDED"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-11T14:37:50.010Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-04-11T14:37:50.010Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"claimed"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-21T08:28:48.518Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"copiedClaimUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"withdrawalId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"numSmsTokens"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"onboardingFlow"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEFAULT"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastWithdrawal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"groupId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clgcda8fu000qlo8llc1v36mp"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"groupTipIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"claimedFromPrintedCard"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"recommendedWalletId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"anonymousTipper"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"passphrase"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"claimWebhookUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a tip group.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET https://lightsats.com/api/tipGroups/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the tip group to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='update-all-tips-in-a-tip-group'>Update all Tips in a Tip group</h2>
+<p>Coming soon</p>
+<h2 id='delete-a-tip-group'>Delete a Tip Group</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://lightsats.com/api/tipGroups/clfw7rh1p000slo8n4j0kyrik"</span> <span class="se">\</span>
+  <span class="nt">-X</span> DELETE <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer your_lightsats_api_token"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint deletes a specific tip group and all its tips.</p>
 
-<p>The Kittn API uses the following error codes:</p>
+<aside class="warning">Only unfunded tip groups can be deleted.</aside>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>DELETE https://lightsats.com/api/tipGroups/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the tip group to delete</td>
+</tr>
+</tbody></table>
+<h1 id='tippee-tips'>Tippee Tips</h1>
+<p>Coming soon.</p>
+<h1 id='errors'>Errors</h1>
+<p>The Lightsats API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -549,31 +886,23 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>Forbidden -- The tip requested is hidden for administrators only.</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>Not Found -- The specified tip could not be found.</td>
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>Method Not Allowed -- You tried to access a tip with an invalid method.</td>
 </tr>
 <tr>
 <td>406</td>
 <td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
 </tr>
 <tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
 <td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>Too Many Requests -- You&#39;re requesting too many tips! Slow down!</td>
 </tr>
 <tr>
 <td>500</td>
@@ -589,9 +918,6 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
