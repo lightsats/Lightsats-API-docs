@@ -312,7 +312,8 @@ note | "Thanks for the great pizza!" | A note to the tippee, shown when they cla
 tippeeNames | ["Name 1", "Name 2"] | Specify names of each tippee, if creating a tip group
 recommendedWalletId | "alby" | Always show a specific wallet at the top of the list. See app/lib/items/wallets.ts
 anonymousTipper | false | If true, do not reveal your profile to the recipient.
-generatePassphrase | false | If true, generate a 3-word magic passphrase a user can use to redeem at https://lightsats.com/tip
+generatePassphrase | false | If true, generate a magic passphrase a user can use to redeem at https://lightsats.com/tip
+passphraseLength | 3 | The number of words in the magic passphrase. Must be provided if generatePassphrase is true.
 claimWebhookUrl | "https://discord.com/api/webhooks/..." | Fire a webhook when the tip gets claimed. Only works for onboardingFlow of "DEFAULT" and "LIGHTNING"
 
 ## Funding Tips
