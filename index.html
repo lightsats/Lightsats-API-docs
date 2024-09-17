@@ -683,7 +683,12 @@ You must replace <code>your_lightsats_api_token</code> with your personal API ke
 <tr>
 <td>generatePassphrase</td>
 <td>false</td>
-<td>If true, generate a 3-word magic passphrase a user can use to redeem at https://lightsats.com/tip</td>
+<td>If true, generate a magic passphrase a user can use to redeem at https://lightsats.com/tip</td>
+</tr>
+<tr>
+<td>passphraseLength</td>
+<td>3</td>
+<td>The number of words in the magic passphrase. Must be provided if generatePassphrase is true.</td>
 </tr>
 <tr>
 <td>claimWebhookUrl</td>
